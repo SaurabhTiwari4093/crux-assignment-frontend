@@ -5,32 +5,35 @@ import { Data } from "../data/data";
 import PieChart from "./charts/pieChart";
 import BarChart from "./charts/barChart";
 import LineChart from "./charts/lineChart";
+import SummaryChart from "./charts/summaryChart";
+import TableChart from "./charts/tableChart";
 
 Chart.register(CategoryScale);
 
 export default function ChartContainer() {
     const [chartData, setChartData] = useState({
-        labels: Data.map((data) => data.year),
+        labels: Data.map((data) => data.platform),
         datasets: [
             {
-                label: "Users Gained ",
-                data: Data.map((data) => data.userGain),
+                label: "Orders",
+                data: Data.map((data) => data.noOfOrder),
                 backgroundColor: [
-                    "rgba(75,192,192,1)",
-                    "#ecf0f1",
-                    "#50AF95",
-                    "#f3ba2f",
-                    "#2a71d0"
-                ],
-                borderColor: "black",
-                borderWidth: 2
+                    "#FB8282",
+                    "#5E5ADB",
+                    "#F2E144",
+                    "#54D787",
+                ]
             }
         ]
     });
 
     return (
-        <div>
-            <PieChart chartData={chartData} />
+        <div className="rounded-lg bg-white h-80 w-full md:w-80 border shadow p-4">
+            {/* <PieChart chartData={chartData}/> */}
+            <BarChart chartData={chartData}/>
+            {/* <LineChart chartData={chartData}/> */}
+            {/* <SummaryChart data={Data} /> */}
+            {/* <TableChart data={Data}/> */}
         </div>
     );
 }
