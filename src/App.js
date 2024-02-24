@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Home from "./Home";
+import Sidebar from "./components/sidebar";
+import Navbar from "./components/navbar";
+import AddWidgets from "./components/addWidgets";
 
 function App() {
+  const [addWidgets, setAddWidgets] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="text-gray-800 bg-violet-100">
+      {
+        addWidgets ? <AddWidgets setAddWidgets={setAddWidgets} /> : <></>
+      }
+      <Sidebar />
+      <Navbar setAddWidgets={setAddWidgets} />
+      <Home />
     </div>
   );
 }
