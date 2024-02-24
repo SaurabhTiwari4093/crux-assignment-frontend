@@ -41,7 +41,7 @@ export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
                     <div className='col-span-3 md:col-span-1 h-full flex flex-col justify-between'>
                         <div className='flex flex-col gap-2'>
                             <div className='text-gray-400'>Components</div>
-                            <div className='border rounded-lg w-full p-2 px-3'>
+                            <div className={`${chartType === 'table' ? 'border border-violet-500' : 'border'} hover:border-violet-500 rounded-lg w-full p-2 px-3 cursor-pointer`} onClick={() => setChartType('table')}>
                                 <div className='font-medium'>Data</div>
                                 <div className='text-gray-500 text-xs'>Random Description</div>
                             </div>
@@ -49,12 +49,12 @@ export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
                                 <div className='font-medium'>Graph</div>
                                 <div className='text-gray-500 text-xs'>Random Description</div>
                                 <div className='flex gap-3 bg-gray-100 rounded w-fit p-1 mt-1'>
-                                    <img src={Chart1} height={37} width={37} alt="chart1" className='px-3 py-0.5 hover:bg-white rounded' />
-                                    <img src={Chart2} height={37} width={37} alt="chart2" className='px-3 py-0.5 hover:bg-white rounded' />
-                                    <img src={Chart3} height={37} width={37} alt="chart3" className='px-3 py-0.5 hover:bg-white rounded' />
+                                    <img src={Chart1} height={45} width={45} alt="chart1" className={`${chartType === 'bar' ? 'bg-white' : ''} px-3 py-0.5 hover:bg-white rounded cursor-pointer`} onClick={() => setChartType('bar')} />
+                                    <img src={Chart2} height={45} width={45} alt="chart2" className={`${chartType === 'line' ? 'bg-white' : ''} px-3 py-0.5 hover:bg-white rounded cursor-pointer`} onClick={() => setChartType('line')} />
+                                    <img src={Chart3} height={45} width={45} alt="chart3" className={`${chartType === 'pie' ? 'bg-white' : ''} px-3 py-0.5 hover:bg-white rounded cursor-pointer`} onClick={() => setChartType('pie')} />
                                 </div>
                             </div>
-                            <div className='border rounded-lg w-full p-2 px-3'>
+                            <div className={`${chartType === 'summary' ? 'border border-violet-500' : 'border'} hover:border-violet-500 rounded-lg w-full p-2 px-3 cursor-pointer`} onClick={() => setChartType('summary')}>
                                 <div className='font-medium'>Summary</div>
                                 <div className='text-gray-500 text-xs'>Random Description</div>
                             </div>
