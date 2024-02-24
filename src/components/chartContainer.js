@@ -10,7 +10,7 @@ import TableChart from "./charts/tableChart";
 
 Chart.register(CategoryScale);
 
-export default function ChartContainer() {
+export default function ChartContainer({ chartType }) {
     const [chartData, setChartData] = useState({
         labels: Data.map((data) => data.platform),
         datasets: [
@@ -29,11 +29,11 @@ export default function ChartContainer() {
 
     return (
         <div className="rounded-lg bg-white h-80 w-full md:w-80 border shadow p-4">
-            {/* <PieChart chartData={chartData}/> */}
-            <BarChart chartData={chartData}/>
-            {/* <LineChart chartData={chartData}/> */}
-            {/* <SummaryChart data={Data} /> */}
-            {/* <TableChart data={Data}/> */}
+            {chartType === 'pie' && <PieChart chartData={chartData} />}
+            {chartType === 'bar' && <BarChart chartData={chartData} />}
+            {chartType === 'line' && <LineChart chartData={chartData} />}
+            {chartType === 'summary' && <SummaryChart data={Data} />}
+            {chartType === 'table' && <TableChart data={Data} />}
         </div>
     );
 }

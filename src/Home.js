@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ChartContainer from './components/chartContainer';
 
 export default function Home({ widgetList }) {
     return (
@@ -6,7 +7,7 @@ export default function Home({ widgetList }) {
             <div className="p-4 flex gap-4 flex-wrap">
                 {widgetList.map((value, key) => (
                     <div key={key}>
-                        {value}
+                        <ChartContainer chartType={value} />
                     </div>
                 ))}
             </div>

@@ -6,16 +6,16 @@ import AddWidget from "./components/addWidget";
 
 function App() {
   const [addWidget, setAddWidget] = useState(false);
-  const [widgetList,setWidgetList] = useState([1,2]);
+  const [widgetList, setWidgetList] = useState(["bar", "line"]);
 
   return (
     <div className="text-gray-600 bg-violet-100 h-screen">
       {
-        addWidget ? <AddWidget setAddWidget={setAddWidget} widgetList={widgetList} setWidgetList={setWidgetList}/> : <></>
+        addWidget ? <AddWidget setAddWidget={setAddWidget} widgetList={widgetList} setWidgetList={setWidgetList} /> : <></>
       }
       <Sidebar />
       <Navbar setAddWidget={setAddWidget} />
-      <Home widgetList={widgetList}/>
+      <Home widgetList={widgetList} />
     </div>
   );
 }

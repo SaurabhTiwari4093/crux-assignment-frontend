@@ -5,7 +5,7 @@ function PieChart({ chartData }) {
     return (
         <div className="w-full h-full">
             <h2 className="text-center">Pie Chart</h2>
-            <div className="w-full h-full flex justify-center items-center">
+            <div className="w-full h-full flex justify-center items-center px-6">
                 <Pie data={chartData} />
             </div>
         </div>

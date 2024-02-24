@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import ModelHeader from "../images/model-header.svg";
 import Clock from "../images/clock.svg";
 import Chart1 from "../images/chart1.svg";
@@ -7,14 +7,14 @@ import Chart3 from "../images/chart3.svg";
 import ChartContainer from './chartContainer';
 
 export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
+    const [chartType, setChartType] = useState("pie");
 
     const closeAddWidget = () => {
         setAddWidget(false);
     }
 
     const addWidgetToList = () => {
-        const newItem = widgetList.length + 1;
-        setWidgetList([...widgetList, newItem]);
+        setWidgetList([...widgetList, chartType]);
         setAddWidget(false);
     }
 
@@ -32,11 +32,11 @@ export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
                             <div className='text-gray-500 text-sm'>Manage the glossary of terms of your Database.</div>
                         </div>
                     </div>
-                    <input defaultValue="Reusability scores" type="text" className='w-full mt-4 md:mt-0 md:w-1/3 border py-1 px-2 rounded text-gray-500 outline-none' placeholder='Title of widget' />
+                    <input defaultValue="Platform Orders" type="text" className='w-full mt-4 md:mt-0 md:w-1/3 border py-1 px-2 rounded text-gray-500 outline-none' placeholder='Title of widget' />
                 </div>
                 <div className='w-full p-4 grid grid-cols-3 gap-4'>
                     <div className='col-span-3 md:col-span-2 p-4 md:h-[400px] rounded-lg bg-violet-50 border border-violet-100 flex justify-center items-center'>
-                        <ChartContainer />
+                        <ChartContainer chartType={chartType} />
                     </div>
                     <div className='col-span-3 md:col-span-1 h-full flex flex-col justify-between'>
                         <div className='flex flex-col gap-2'>

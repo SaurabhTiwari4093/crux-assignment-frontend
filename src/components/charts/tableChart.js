@@ -8,15 +8,15 @@ export default function TableChart({ data }) {
         <table className='w-full'>
           <thead className='w-full'>
             <tr>
-              <th>Platform</th>
-              <th>No. of Orders</th>
+              <th className='border p-1'>Platform</th>
+              <th className='border p-1'>No. of Orders</th>
             </tr>
           </thead>
           <tbody className='w-full'>
             {data.map((item, index) => (
               <tr key={index}>
-                <td>{item.platform}</td>
-                <td>{item.noOfOrder}</td>
+                <td className='border p-0.5'>{item.platform}</td>
+                <td className='border p-0.5'>{item.noOfOrder}</td>
               </tr>
             ))}
           </tbody>
