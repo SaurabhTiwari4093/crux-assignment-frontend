@@ -8,7 +8,7 @@ import Nav4 from "../images/nav4.svg";
 
 export default function Sidebar() {
   return (
-    <div className='h-screen bg-white absolute left-0 top-0 w-16 border-r flex flex-col justify-between p-4'>
+    <div className='bg-white fixed left-0 top-0 w-16 border-r flex flex-col justify-between p-4 h-full z-10'>
         <div className='flex flex-col gap-4'>
             <img src={Crux} height={30} width={30} alt='Header' className='cursor-pointer'/>
             <img src={Nav1} height={30} width={30} alt='Nav1' className='rounded p-1.5 hover:bg-gray-100 cursor-pointer'/>

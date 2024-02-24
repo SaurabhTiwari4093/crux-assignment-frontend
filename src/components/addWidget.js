@@ -5,18 +5,18 @@ import Chart1 from "../images/chart1.svg";
 import Chart2 from "../images/chart2.svg";
 import Chart3 from "../images/chart3.svg";
 
-export default function AddWidgets({ setAddWidgets }) {
+export default function AddWidget({ setAddWidget }) {
 
-    const closeAddWidgets = () => {
+    const closeAddWidget = () => {
         document.body.style.overflow = "auto";
-        setAddWidgets(false);
+        setAddWidget(false);
     }
 
     return (
-        <div className='absolute top-0 left-0 h-screen w-screen flex justify-center items-center bg-black bg-opacity-50 p-4 z-10'>
+        <div className='absolute top-0 left-0 h-screen w-screen flex justify-center items-center bg-black bg-opacity-50 p-4 z-20'>
             <div className='bg-white rounded-lg shadow w-full md:w-2/3 z-10'>
                 <div className='p-4 pb-0 flex justify-end'>
-                    <div className='hover:bg-gray-50 px-2 py-1 rounded text-gray-500 cursor-pointer' onClick={closeAddWidgets}>X</div>
+                    <div className='hover:bg-gray-50 px-2 py-1 rounded text-gray-500 cursor-pointer' onClick={closeAddWidget}>X</div>
                 </div>
                 <div className='w-full p-4 pt-0 border-b-2 md:flex justify-between items-end'>
                     <div className='flex gap-2'>
@@ -59,7 +59,7 @@ export default function AddWidgets({ setAddWidgets }) {
                             <button className='bg-violet-100 hover:bg-violet-200 border border-violet-200 px-3 py-2 rounded flex justify-center items-center w-36'>
                                 <img src={Clock} height={20} width={20} alt={"Clock"}/>
                             </button>
-                            <button className='w-full border hover:bg-gray-100 px-3 py-2 rounded' onClick={closeAddWidgets}>Cancel</button>
+                            <button className='w-full border hover:bg-gray-100 px-3 py-2 rounded' onClick={closeAddWidget}>Cancel</button>
                             <button className='w-full bg-violet-600 border border-violet-700 hover:bg-violet-700 text-white px-3 py-2 rounded'>Save</button>
                         </div>
                     </div>
