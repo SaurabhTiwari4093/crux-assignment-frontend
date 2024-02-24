@@ -28,7 +28,7 @@ export default function ChartContainer({ chartType }) {
     });
 
     return (
-        <div className="rounded-lg bg-white h-80 w-full md:w-80 border shadow p-4">
+        <div className="rounded-lg bg-white h-80 w-80 border shadow p-4">
             {chartType === 'pie' && <PieChart chartData={chartData} />}
             {chartType === 'bar' && <BarChart chartData={chartData} />}
             {chartType === 'line' && <LineChart chartData={chartData} />}
