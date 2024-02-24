@@ -5,10 +5,15 @@ import Chart1 from "../images/chart1.svg";
 import Chart2 from "../images/chart2.svg";
 import Chart3 from "../images/chart3.svg";
 
-export default function AddWidget({ setAddWidget }) {
+export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
 
     const closeAddWidget = () => {
-        document.body.style.overflow = "auto";
+        setAddWidget(false);
+    }
+
+    const addWidgetToList = () => {
+        const newItem = widgetList.length + 1;
+        setWidgetList([...widgetList, newItem]);
         setAddWidget(false);
     }
 
@@ -29,8 +34,8 @@ export default function AddWidget({ setAddWidget }) {
                     <input defaultValue="Reusability scores" type="text" className='w-full mt-4 md:mt-0 md:w-1/3 border py-1 px-2 rounded text-gray-500 outline-none' placeholder='Title of widget' />
                 </div>
                 <div className='w-full p-4 grid grid-cols-3 gap-4'>
-                    <div className='col-span-3 md:col-span-2 h-[400px] rounded-lg bg-violet-50 border border-violet-100 flex justify-center items-center'>
-                        <div className='rounded-lg bg-white h-60 w-60 border shadow'>
+                    <div className='col-span-3 md:col-span-2 p-4 md:h-[400px] rounded-lg bg-violet-50 border border-violet-100 flex justify-center items-center'>
+                        <div className='rounded-lg bg-white h-60 w-60 border shadow p-4'>
 
                         </div>
                     </div>
@@ -42,25 +47,25 @@ export default function AddWidget({ setAddWidget }) {
                                 <div className='text-gray-500 text-xs'>Random Description</div>
                             </div>
                             <div className='border rounded-lg w-full p-2 px-3'>
-                                <div  className='font-medium'>Graph</div>
+                                <div className='font-medium'>Graph</div>
                                 <div className='text-gray-500 text-xs'>Random Description</div>
                                 <div className='flex gap-3 bg-gray-100 rounded w-fit p-1 mt-1'>
-                                    <img src={Chart1} height={37} width={37} alt="chart1" className='px-3 py-0.5 hover:bg-white rounded'/>
-                                    <img src={Chart2} height={37} width={37} alt="chart2" className='px-3 py-0.5 hover:bg-white rounded'/>
-                                    <img src={Chart3} height={37} width={37} alt="chart3" className='px-3 py-0.5 hover:bg-white rounded'/>
+                                    <img src={Chart1} height={37} width={37} alt="chart1" className='px-3 py-0.5 hover:bg-white rounded' />
+                                    <img src={Chart2} height={37} width={37} alt="chart2" className='px-3 py-0.5 hover:bg-white rounded' />
+                                    <img src={Chart3} height={37} width={37} alt="chart3" className='px-3 py-0.5 hover:bg-white rounded' />
                                 </div>
                             </div>
                             <div className='border rounded-lg w-full p-2 px-3'>
-                                <div  className='font-medium'>Summary</div>
+                                <div className='font-medium'>Summary</div>
                                 <div className='text-gray-500 text-xs'>Random Description</div>
                             </div>
                         </div>
                         <div className='flex gap-4 mt-4 md:mt-0'>
                             <button className='bg-violet-100 hover:bg-violet-200 border border-violet-200 px-3 py-2 rounded flex justify-center items-center w-36'>
-                                <img src={Clock} height={20} width={20} alt={"Clock"}/>
+                                <img src={Clock} height={20} width={20} alt={"Clock"} />
                             </button>
                             <button className='w-full border hover:bg-gray-100 px-3 py-2 rounded' onClick={closeAddWidget}>Cancel</button>
-                            <button className='w-full bg-violet-600 border border-violet-700 hover:bg-violet-700 text-white px-3 py-2 rounded'>Save</button>
+                            <button className='w-full bg-violet-600 border border-violet-700 hover:bg-violet-700 text-white px-3 py-2 rounded' onClick={addWidgetToList}>Save</button>
                         </div>
                     </div>
                 </div>

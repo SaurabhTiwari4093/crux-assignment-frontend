@@ -5,7 +5,6 @@ import Home from "../images/home.svg"
 export default function Navbar({setAddWidget}) {
 
     const openAddWidget=()=>{
-        document.body.style.overflow="hidden";
         setAddWidget(true);
     }
 
