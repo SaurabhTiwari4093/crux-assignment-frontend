@@ -11,8 +11,8 @@ export default function Navbar({setAddWidgets}) {
 
     return (
         <div className='bg-white w-screen h-16 border-b pl-16'>
-            <div className='w-full h-full flex justify-between items-center p-4'>
-                <div className='flex gap-2'>
+            <div className='w-full h-full flex justify-end md:justify-between items-center p-4'>
+                <div className='hidden md:flex gap-2'>
                     <img src={Home} height={30} width={30} alt='Setting' className='rounded p-1.5 hover:bg-gray-100 cursor-pointer' />
                     <button className='px-3 py-0.5 rounded border border-gray-200 text-sm text-gray-500'>Overview</button>
                     <button className='px-3 py-0.5 rounded border border-violet-200 text-sm bg-violet-50 text-violet-500'>Customers<span className='ml-2'>X</span></button>
