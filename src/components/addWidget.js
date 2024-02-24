@@ -4,6 +4,7 @@ import Clock from "../images/clock.svg";
 import Chart1 from "../images/chart1.svg";
 import Chart2 from "../images/chart2.svg";
 import Chart3 from "../images/chart3.svg";
+import ChartContainer from './chartContainer';
 
 export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
 
@@ -35,8 +36,8 @@ export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
                 </div>
                 <div className='w-full p-4 grid grid-cols-3 gap-4'>
                     <div className='col-span-3 md:col-span-2 p-4 md:h-[400px] rounded-lg bg-violet-50 border border-violet-100 flex justify-center items-center'>
-                        <div className='rounded-lg bg-white h-60 w-60 border shadow p-4'>
-
+                        <div className='rounded-lg bg-white h-56 w-56 border shadow p-4'>
+                            <ChartContainer/>
                         </div>
                     </div>
                     <div className='col-span-3 md:col-span-1 h-full flex flex-col justify-between'>
