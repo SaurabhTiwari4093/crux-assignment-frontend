@@ -1,3 +1,7 @@
+![Screenshot (19)](https://github.com/SaurabhTiwari4093/crux-assignment-frontend/assets/86095513/645d71f1-0206-4e08-8e0e-d9154167bcc7)
+
+![Screenshot (20)](https://github.com/SaurabhTiwari4093/crux-assignment-frontend/assets/86095513/9fb2a8a1-0109-4e6c-bdbe-332ac7409c80)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
