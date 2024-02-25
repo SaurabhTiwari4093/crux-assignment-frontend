@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function TableChart({ data }) {
+export default function TableChart({ data,colorMode }) {
   return (
-    <div className="w-full h-full">
+    <div className={`rounded-lg w-full h-full p-4 ${colorMode==='dark'?"bg-gray-800 text-white":"bg-white"}`}>
       <h2 className="text-center">Order Data</h2>
       <div className='text-sm text-center w-full h-full flex justify-center items-center'>
         <table className='w-full'>

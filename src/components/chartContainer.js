@@ -10,7 +10,7 @@ import TableChart from "./charts/tableChart";
 
 Chart.register(CategoryScale);
 
-export default function ChartContainer({ chartType }) {
+export default function ChartContainer({ chartType, colorMode }) {
     const [chartData, setChartData] = useState({
         labels: Data.map((data) => data.platform),
         datasets: [
@@ -28,12 +28,12 @@ export default function ChartContainer({ chartType }) {
     });
 
     return (
-        <div className="rounded-lg bg-white h-80 w-80 border shadow p-4">
-            {chartType === 'pie' && <PieChart chartData={chartData} />}
-            {chartType === 'bar' && <BarChart chartData={chartData} />}
-            {chartType === 'line' && <LineChart chartData={chartData} />}
-            {chartType === 'summary' && <SummaryChart data={Data} />}
-            {chartType === 'table' && <TableChart data={Data} />}
+        <div className="rounded-lg h-72 w-72 md:h-64 md:w-64 border shadow">
+            {chartType === 'pie' && <PieChart chartData={chartData} colorMode={colorMode}/>}
+            {chartType === 'bar' && <BarChart chartData={chartData} colorMode={colorMode}/>}
+            {chartType === 'line' && <LineChart chartData={chartData} colorMode={colorMode}/>}
+            {chartType === 'summary' && <SummaryChart data={Data} colorMode={colorMode}/>}
+            {chartType === 'table' && <TableChart data={Data} colorMode={colorMode}/>}
         </div>
     );
 }

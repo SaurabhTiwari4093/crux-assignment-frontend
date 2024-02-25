@@ -7,7 +7,7 @@ export default function Home({ widgetList }) {
             <div className="p-4 flex gap-4 flex-wrap">
                 {widgetList.map((value, key) => (
                     <div key={key}>
-                        <ChartContainer chartType={value} />
+                        <ChartContainer chartType={value.chartType} colorMode={value.colorMode}/>
                     </div>
                 ))}
             </div>

@@ -8,13 +8,18 @@ import ChartContainer from './chartContainer';
 
 export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
     const [chartType, setChartType] = useState("pie");
+    const [colorMode, setColorMode] = useState("light");
 
     const closeAddWidget = () => {
         setAddWidget(false);
     }
 
     const addWidgetToList = () => {
-        setWidgetList([...widgetList, chartType]);
+        const newWidget = {
+            "chartType": chartType,
+            "colorMode": colorMode,
+        }
+        setWidgetList([...widgetList, newWidget]);
         setAddWidget(false);
     }
 
@@ -35,8 +40,12 @@ export default function AddWidget({ setAddWidget, widgetList, setWidgetList }) {
                     <input defaultValue="Platform Orders" type="text" className='w-full mt-4 md:mt-0 md:w-1/3 border py-1 px-2 rounded text-gray-500 outline-none' placeholder='Title of widget' />
                 </div>
                 <div className='w-full p-4 grid grid-cols-3 gap-4'>
-                    <div className='col-span-3 md:col-span-2 p-4 md:h-[400px] rounded-lg bg-violet-50 border border-violet-100 flex justify-center items-center'>
-                        <ChartContainer chartType={chartType} />
+                    <div className='col-span-3 md:col-span-2 p-4 md:h-[400px] rounded-lg bg-violet-50 border border-violet-100 flex justify-center items-center relative'>
+                        <ChartContainer chartType={chartType} colorMode={colorMode} />
+                        <div className='absolute bottom-2 left-0 w-full flex justify-center items-center gap-2'>
+                            <button className='h-5 w-5 bg-white border-2 border-gray-300 rounded-full' onClick={() => setColorMode('light')} />
+                            <button className='h-5 w-5 bg-gray-800 border-2 border-gray-500 rounded-full' onClick={() => setColorMode('dark')} />
+                        </div>
                     </div>
                     <div className='col-span-3 md:col-span-1 h-full flex flex-col justify-between'>
                         <div className='flex flex-col gap-2'>
